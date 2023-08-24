@@ -1,3 +1,4 @@
+import { join } from 'node:path'
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 
@@ -9,6 +10,11 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {},
+    },
+  },
+  resolve: {
+    alias: {
+      '@': join(__dirname, 'src'),
     },
   },
 })

@@ -1,41 +1,38 @@
+<script setup lang="ts">
+function toScale(scale: string) {
+  uni.redirectTo({ url: `/pages/main/scale/index?scale=${scale}` })
+}
+</script>
+
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
+    <view>
+      请选择题目
+    </view>
+    <view class="scale-list">
+      <view class="scale-list__item" @click="toScale('LAS')">
+        LAS爱情态度测试
+      </view>
     </view>
   </view>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-const title = ref('Hello')
-</script>
-
-<style>
+<style lang="scss">
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
+  .title {
+    font-size: 36rpx;
+    color: #8f8f94;
+  }
 
-.text-area {
-  display: flex;
-  justify-content: center;
-}
+  .scale-list{
+    &__item{
 
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+    }
+  }
 }
 </style>
