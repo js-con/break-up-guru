@@ -22,6 +22,12 @@
           "style": {
             "navigationBarTitleText": "答题"
           }
+        },
+        {
+          "path": "results/index",
+          "style": {
+            "navigationBarTitleText": "结果"
+          }
         }
       ]
     }
