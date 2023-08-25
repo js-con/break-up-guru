@@ -12,4 +12,9 @@ onHide(() => {
 })
 </script>
 
-<style></style>
+<style lang="scss">
+page{
+  background-color: $uni-bg-color;
+  color: $uni-text-color;
+}
+</style>
