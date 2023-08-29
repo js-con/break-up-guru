@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
-import Scale from './components/scale.vue'
+import Scale from './components/Scale.vue'
 import scaleMap from '@/hooks/scales/index.ts'
 
 const scaleData = ref()
