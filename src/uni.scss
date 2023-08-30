@@ -78,3 +78,28 @@ $uni-color-subtitle: #555; // 二级标题颜色
 $uni-font-size-subtitle: 18px;
 $uni-color-paragraph: #3f536e; // 文章段落颜色
 $uni-font-size-paragraph: 15px;
+
+
+// 动画
+.slit-in-vertical{-webkit-animation:slit-in-vertical .45s ease-out both;animation:slit-in-vertical .45s ease-out both}
+@-webkit-keyframes slit-in-vertical{0%{-webkit-transform:translateZ(-800px) rotateY(90deg);transform:translateZ(-800px) rotateY(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateY(87deg);transform:translateZ(-160px) rotateY(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateY(0);transform:translateZ(0) rotateY(0)}}@keyframes slit-in-vertical{0%{-webkit-transform:translateZ(-800px) rotateY(90deg);transform:translateZ(-800px) rotateY(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateY(87deg);transform:translateZ(-160px) rotateY(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateY(0);transform:translateZ(0) rotateY(0)}}
+
+.tracking-in-contract{
+  -webkit-animation:tracking-in-contract .8s cubic-bezier(.215,.61,.355,1.000) both;
+  animation:tracking-in-contract .8s cubic-bezier(.215,.61,.355,1.000) both
+}
+@-webkit-keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}@keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}
+
+.text-focus-in{-webkit-animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both}
+ @-webkit-keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+
+@function slide-in-bottom($time){
+  $timing-function: cubic-bezier(.25,.46,.45,.94);
+  $animation: "slide-in-bottom #{$time} #{$timing-function} both";
+
+  @return (
+    -webkit-animation: #{$animation},
+    animation: #{$animation}
+  )
+}
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
