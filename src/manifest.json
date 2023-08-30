@@ -18,7 +18,7 @@
     },
     "safearea": {
       "background": "#fff",
-      "backgroundDark": "#999",
+      "backgroundDark": "#000",
       "bottom": {
         "offset": "auto"
       }
@@ -59,7 +59,7 @@
   "mp-weixin": {
     "appid": "wx17d5cfc2ed16f60b",
     "setting": {
-      "urlCheck": false
+      "urlCheck": true
     },
     "usingComponents": true
   },
