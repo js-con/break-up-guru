@@ -72,6 +72,9 @@ function getPercent(score: number) {
         {{ conclusion.type }}
       </text>
     </view>
+    <view class="conclusion text-focus-in">
+      {{ conclusion.description }}
+    </view>
     <view class="dimensions">
       <view
         v-for="item in dimensions"
@@ -88,9 +91,6 @@ function getPercent(score: number) {
           />
         </view>
       </view>
-    </view>
-    <view class="conclusion text-focus-in">
-      {{ conclusion.description }}
     </view>
   </view>
 </template>
@@ -110,10 +110,14 @@ $slide-in-bottom-properties: slide-in-bottom(1.2s);
     font-size: 34px;
   }
   .title{
-    margin-bottom: 96rpx;
     font-size: 22px;
   }
+  .conclusion{
+    margin-top: 36rpx;
+    font-size: 16px;
+  }
   .dimensions{
+    margin-top: 64rpx;
     display: flex;
     flex-direction: column;
     gap: 64rpx;
@@ -134,10 +138,6 @@ $slide-in-bottom-properties: slide-in-bottom(1.2s);
         }
       }
     }
-  }
-  .conclusion{
-    margin-top: 48rpx;
-    font-size: 16px;
   }
 
 }
