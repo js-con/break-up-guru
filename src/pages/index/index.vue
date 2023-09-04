@@ -12,6 +12,11 @@ const scaleList = ref([
     title: 'LAS爱情态度测试',
     desc: '爱情态度量表LAS由美国心理学家Hendrick编制，将爱情态度分为6种类型：浪漫型、游戏型、伴侣型、现实型、实用型和奉献型。不同的类型对待爱情的态度存在非常大的差异，通过爱情态度量表的测试，可以帮助我们树立正确的爱情观。',
   },
+  {
+    name: 'ECR',
+    title: 'ECR成人依恋量表',
+    desc: '依恋理论（attachment theory）认为人类从婴儿时期开始就有一种向最初的照顾者保持亲近的倾向。在亲密关系中，每个人都有自己的依恋类型，它从我们婴儿时与父母的相处中发展而出，影响着我们在爱情中的行为和表现。',
+  },
 ])
 </script>
 
@@ -22,7 +27,7 @@ const scaleList = ref([
         v-for="scale in scaleList"
         :key="scale.name"
         class="scale-list__item"
-        @click="toScale('LAS')"
+        @click="toScale(scale.name)"
       >
         <view class="scale-list__item-title">
           {{ scale.title }}
@@ -64,7 +69,7 @@ const scaleList = ref([
     height: 375rpx;
     &__item{
       padding: 24rpx;
-      background-color: #17171a;
+      background-color: $uni-text-color-grey;
       border-radius: 10rpx;
       border: 1px solid $uni-border-color;
       &-title{

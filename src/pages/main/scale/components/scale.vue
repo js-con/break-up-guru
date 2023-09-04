@@ -4,6 +4,7 @@ import GButton from '@/components/Button.vue'
 
 const props = defineProps<{
   scaleData: {
+    name: string
     describe: string
     questions: string[]
     options: string[]
@@ -65,7 +66,7 @@ function toResult() {
   <view v-if="scaleData" class="scale">
     <view v-if="!isStart" class="describe">
       <view class="title">
-        LAS爱情态度量表
+        {{ props.scaleData.name }}
       </view>
       <view class="content">
         <view

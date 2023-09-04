@@ -1,6 +1,8 @@
 import { type MaybeRef, ref, unref } from 'vue'
 
 export function useLAS() {
+  const name = 'LAS爱情态度量表'
+
   const describe = [
     '这个量表主要是想了解你对爱情所持的态度。',
     '题目中的“TA”，是指目前与你密切交往的男/女朋友（请以您目前的恋人为回答依据),',
@@ -88,6 +90,7 @@ export function useLAS() {
   }
 
   return {
+    name,
     describe,
     questions,
     options,
