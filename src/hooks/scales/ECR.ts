@@ -1,6 +1,7 @@
 import { type MaybeRef, ref, unref } from 'vue'
 
 export function useECR() {
+  const id = 'ECR'
   const name = 'ECR成人依恋量表'
 
   const describe = [
@@ -18,7 +19,7 @@ export function useECR() {
   })
 
   const questions = ref([
-    '无论我心情多么的低落，我都不愿意像恋人袒露',
+    '无论我心情多么的低落，我都不愿意向恋人袒露',
     '我担心会被抛弃',
     '和恋人亲密相处，我感到非常舒服',
     '我很担心我的恋爱关系',
@@ -88,10 +89,11 @@ export function useECR() {
     result.value.obsession = AScore * 3.9246754 + BScore * 9.7102446 - 28.4573220
     result.value.cold = AScore * 7.3654621 + BScore * 4.9392039 - 22.22810880
 
-    return result
+    return result.value
   }
 
   return {
+    id,
     name,
     describe,
     questions,

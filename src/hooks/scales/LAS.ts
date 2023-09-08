@@ -1,6 +1,7 @@
 import { type MaybeRef, ref, unref } from 'vue'
 
 export function useLAS() {
+  const id = 'LAS'
   const name = 'LAS爱情态度量表'
 
   const describe = [
@@ -90,6 +91,7 @@ export function useLAS() {
   }
 
   return {
+    id,
     name,
     describe,
     questions,

@@ -4,6 +4,7 @@ import GButton from '@/components/Button.vue'
 
 const props = defineProps<{
   scaleData: {
+    id: string
     name: string
     describe: string
     questions: string[]
@@ -18,7 +19,7 @@ const answers = ref<number[]>([])
 const isStart = ref(false)
 function onStart() {
   isStart.value = true
-  console.log('isStart.value:', isStart.value)
+  console.log('scaleData:', props.scaleData)
 }
 
 const progressWidth = computed(() => {
@@ -28,7 +29,6 @@ const progressWidth = computed(() => {
     return '100%'
   const progress = `${Math.ceil(cur / total * 100)}%`
 
-  console.log('progress:', progress)
   return progress
 })
 
@@ -56,9 +56,8 @@ function prevPage() {
 function toResult() {
   if (answers.value.length !== props.scaleData.questions.length)
     return
-
   const result = props.scaleData.submit(answers.value)
-  uni.redirectTo({ url: `/pages/main/results/index?scale=LAS&result=${JSON.stringify(result)}` })
+  uni.redirectTo({ url: `/pages/main/results/index?scale=${props.scaleData.id}&result=${JSON.stringify(result)}` })
 }
 </script>
 
