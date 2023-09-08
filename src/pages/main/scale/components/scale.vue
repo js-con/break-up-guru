@@ -112,7 +112,7 @@ function toResult() {
           上一题
         </view>
         <GButton
-          v-if="pageNo >= scaleData.questions.length - 1"
+          v-if="pageNo >= scaleData.questions.length - 1 && answers.length === scaleData.questions.length"
           class="check-result"
           type="primary"
           @tap="toResult"
